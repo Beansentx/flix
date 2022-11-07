@@ -14,7 +14,9 @@
         <%= movie.title %>
       </h2>
       <h3>
+      <p>
         <%= total_gross(movie) %>
+      </p>
       </h3>
       <p>
         <%= truncate(movie.description, length: 150, separator: ' ') %>
