@@ -32,6 +32,10 @@ class MoviesController < ApplicationController
         @movie.destroy
         redirect_to movies_url, status: :see_other
     end
+
+    def index
+        @movies = Movie.released
+      end
 end
 
 private
