@@ -11,23 +11,19 @@
   </head>
 
   <body>
-
-  <!-- <header>
-     <h1>
-      <%= image_tag("logo.png")%>
-    </h1>
-  </header> -->
+    <!-- <header>
+      <h1>
+        <%= image_tag("logo.png")%>
+      </h1>
+    </header> -->
   <%= render "layouts/header"%>
- 
-
     <div class="content">
       <%= yield %>
     </div>
   <%= render "layouts/footer"%>
-   <!-- <footer>
+    <!-- <footer>
       © <%= Time.now.year %> 
       <%= link_to "VINCE CORP", "vincent.com"%>
     </footer> -->
-
   </body>
 </html>

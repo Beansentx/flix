@@ -1,12 +1,12 @@
 class MoviesController < ApplicationController
     def index
-        @movies = Movie.all
+        @movies = Movie.released
     end
 
     def show
         @movie = Movie.find(params[:id])
     end
-
+    
     def edit
         @movie = Movie.find(params[:id])
     end
@@ -33,9 +33,6 @@ class MoviesController < ApplicationController
         redirect_to movies_url, status: :see_other
     end
 
-    def index
-        @movies = Movie.released
-      end
 end
 
 private
@@ -45,7 +42,10 @@ private
           permit(:title, 
             :description, 
             :rating, 
-            :released_on, 
+            :released_on,
+            :director,
+            :duration,
+            :image_file_name, 
             :total_gross)
     end
 

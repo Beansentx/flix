@@ -1,9 +1,10 @@
 <h1>MOVIES</h1>
 <ul>
-
-
     <% @movies.each do |movie| %>
   <section class="movie">
+  <div class="image">
+    <%= image_tag(movie.image_file_name)%>
+  </div>
     <div class="summary">
       <h1>
         <%= link_to movie.title,  movie %>
@@ -13,7 +14,12 @@
       <p>
         <%= total_gross(movie) %>
       </p>
-      
+      <p>
+        Director: <%= movie.director %>
+      </p>
+      <p>
+        Duration: <%= movie.duration %>
+      </p>
       </h3>
       <p>
         <%= truncate(movie.description, length: 150, separator: ' ') %>
