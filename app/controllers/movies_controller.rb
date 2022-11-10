@@ -37,8 +37,8 @@ class MoviesController < ApplicationController
     def destroy
         @movie = Movie.find(params[:id])
         @movie.destroy
-        redirect_to movies_url, status: :see_other
-        alert: "Movie Deleted"
+        redirect_to movies_url, status: :see_other,
+        alert: "Movie deleted"
     end
 
 end
