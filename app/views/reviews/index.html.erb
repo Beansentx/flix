@@ -4,8 +4,8 @@
         <li>
         <%= render "shared/stars", percent: r.stars_as_percent %>
         <p>
-            <%= r.name %>
-            "<%= r.comment %>"
+            <%= r.name.titleize %> <!-- "titleize" method for auto capitalize first letter -->
+            &bull; "<%= r.comment %>"
         <span class="date">
             review created <%= time_ago_in_words(r.created_at) %> ago
         </span>

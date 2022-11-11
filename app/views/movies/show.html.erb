@@ -22,6 +22,14 @@
         <td><%= @movie.duration %></td>
       </tr>
     </table>
+    <div class="reviews">
+      <p>
+        <%= link_to "Reviews", movie_reviews_path(@movie)%>
+          <p>
+            <%= link_to "Write Review", new_movie_review_path(@movie) ,class: "review"%>
+          </p>
+      </p>
+    </div>
   </div>
 </section>
 <section class="admin">
