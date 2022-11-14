@@ -1,5 +1,5 @@
 <section class="movie-details">
-  <div class="details">
+  <div class="summary">
   <%= image_tag(@movie.image_file_name)%>
     <h1><%= @movie.title %></h1>
       <h2>
@@ -23,17 +23,16 @@
       </tr>
     </table>
     <div class="reviews">
-      <p>
-        <%= link_to "Reviews", movie_reviews_path(@movie)%>
+      <span class="Stars" > 
+       <%= average_stars(@movie) %> / 
+       <%= link_to pluralize(@movie.reviews.size, "Review"), movie_reviews_path(@movie)%></span>
           <p>
             <%= link_to "Write Review", new_movie_review_path(@movie) ,class: "review"%>
           </p>
       </p>
-    </div>
-  </div>
-</section>
-<section class="admin">
-  <%= link_to "Edit", edit_movie_path(@movie), class: "button" %>
-    <%= link_to "Delete", movie_path(@movie), class: "button", 
-    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-</section>
+    </section>
+    <section class="admin">
+      <%= link_to "Edit", edit_movie_path(@movie), class: "button" %>
+        <%= link_to "Delete", movie_path(@movie), class: "button", 
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </section>

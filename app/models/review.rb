@@ -13,4 +13,5 @@ class Review < ApplicationRecord
     (stars / 5.0) * 100.0
   end
 
+
 end
