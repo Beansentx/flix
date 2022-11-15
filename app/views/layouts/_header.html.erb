@@ -10,6 +10,8 @@
           <% if current_user %>
           <li><%= link_to current_user.email, current_user, class: "button" %></li>
           <li><%= link_to "Account Settings", edit_user_path(current_user), class: "button" %></li>
+          <li><%= link_to "Log Out", session_path, class: "button", 
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?" } %></li>
           <% else %>
           <li><%= link_to "Login", login_path, class: "button"%></li>
           <li><%= link_to "Register", sign_up_path(@user), class: "button"%></li>
